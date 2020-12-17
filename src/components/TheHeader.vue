@@ -10,10 +10,25 @@
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">Dashboard</a>
+          <a class="nav-link " href="#">Tableau de Bord</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Edit</a>
+          <a class="nav-link" href="#">Edition</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Enchères</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Commandes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Stock</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Règles du Jeu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Utilisateurs</a>
         </li>
       </ul>
     </div>
