@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
  
 app.get('/', (request, response) => {
-  response.sendFile(path.join(__dirname + '/../client/src/components/Pages/Edit.vue'));
+  response.sendFile(path.join(__dirname + '/../client/public/index.html'));
 });
 
 /*
