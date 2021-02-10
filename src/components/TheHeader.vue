@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-light bg-light navbar-expand-lg">
-    <a class="navbar-brand" href="#">
-      <img src="../assets/logo.png" width="30" height="30" />
+    <a @click="changePage('User')" class="navbar-brand" href="#">
+      <img src="../assets/pika.png" width="30" height="30" />
       PokemonShop
     </a>
     <button class="navbar-toggler">
@@ -10,25 +10,28 @@
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link " href="#">Tableau de Bord</a>
+          <a @click="changePage('User')" :class="{active: page === 'User'}" class="nav-link " href="#">Shop</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Edition</a>
+          <a @click="changePage('Admin')" :class="{active: page === 'Admin'}" class="nav-link " href="#">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Enchères</a>
+          <a @click="changePage()" class="nav-link" href="#">Edition</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Commandes</a>
+          <a @click="changePage()" class="nav-link" href="#">Bid</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Stock</a>
+          <a @click="changePage()" class="nav-link" href="#">Orders</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Règles du Jeu</a>
+          <a @click="changePage()" class="nav-link" href="#">Stock</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Utilisateurs</a>
+          <a @click="changePage()" class="nav-link" href="#">Rules</a>
+        </li>
+        <li class="nav-item">
+          <a @click="changePage()" class="nav-link" href="#">Utilisateurs</a>
         </li>
       </ul>
     </div>
@@ -36,10 +39,30 @@
 </template>
 
 <script>
+import {eventBus} from '../main';
+
 export default {
+  data() {
+    return {
+      page: eventBus.page
+    }
+  },
+  methods: {
+    changePage(page){
+      eventBus.changePage(page);
+    },
+    created(){
+      eventBus.$on('update:page', (page) => {
+        this.page = page;
+      })
+    }
+  }
 }
 </script>
 
-<style>
+<style scoped>
+a{
+  cursor: pointer;
+}
 
 </style>

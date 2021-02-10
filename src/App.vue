@@ -1,28 +1,39 @@
 <template>
   <div id="app">
     <the-header></the-header>
-    <div class="d-flex flex-row"></div>
-      <dashboard></dashboard>
-      <product-list class="p-3"></product-list>
+    <div class="d-flex flex-column w-100">
+      <component :is="page"></component>
+    </div>
   </div>
 </template>
 
 <script>
-import TheHeader from './components/TheHeader.vue';
-import Dashboard from './components/Admin/AdminDashboard.vue';
-import ProductList from './components/Admin/ProductList.vue';
+import TheHeader from './components/TheHeader';
+import User from './components/features/User/User';
+import Admin from './components/features/Admin/Admin';
+import { eventBus } from './main';
 
 export default {
   name: 'App',
   components: {
     TheHeader,
-    Dashboard,
-    ProductList
+    User,
+    Admin
+  },
+  data(){
+    return {
+      page: eventBus.page
+    }
+  },
+  created(){
+    eventBus.$on('update:page', (page) => {
+      this.page = page;
+    })
   }
 }
 </script>
-,
-    ProductList
+
 <style>
+
 
 </style>
