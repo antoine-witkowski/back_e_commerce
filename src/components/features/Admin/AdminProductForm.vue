@@ -1,6 +1,6 @@
 <template>
  <form class="d-flex flex-column formContainer">
-   <h4>Ajouter une carte</h4>
+   <h4>Add new card</h4>
    <hr class="w-100">
    <div class="form-group">
      <label>Image Url:</label>
@@ -128,5 +128,6 @@ export default {
     padding: 50px 30px;
     background-color: #1e90ff;
     border-radius: 10px;
+    color: white;
   }
 </style>
