@@ -7,26 +7,26 @@
             <v-container>
               <v-row>
                 <v-col md="6" class="">
-                  <admin-component/>
+                  <sales-mini/>
                 </v-col>
                 <v-col md="6" class="">
-                  <admin-component/>
-                </v-col>
-              </v-row>
-              <v-row>
-                <v-col md="6" class="">
-                  <admin-component/>
-                </v-col>
-                <v-col md="6" class="">
-                  <admin-component/>
+                  <bid-mini/>
                 </v-col>
               </v-row>
               <v-row>
                 <v-col md="6" class="">
-                  <admin-component/>
+                  <orders-mini/>
                 </v-col>
                 <v-col md="6" class="">
-                  <admin-component/>
+                  <stock-mini/>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col md="6" class="">
+                  <analytics-mini/>
+                </v-col>
+                <v-col md="6" class="">
+                  <users-mini/>
                 </v-col>
               </v-row>
             </v-container>
@@ -45,13 +45,23 @@
 </template>
 
 <script>
-import AdminComponent from './AdminComponent.vue';
 import AdminProductForm from './AdminProductForm';
+import AnalyticsMini from './Analytics/AnalyticsMini.vue';
+import UsersMini from './Users/UsersMini.vue';
+import StockMini from './Stock/StockMini.vue';
+import BidMini from './Bid/BidMini.vue';
+import OrdersMini from './Orders/OrdersMini.vue';
+import SalesMini from './Sales/SalesMini.vue';
 
 export default {
   components: { 
     AdminProductForm,
-    AdminComponent 
+    SalesMini,
+    BidMini,
+    OrdersMini,
+    AnalyticsMini,
+    UsersMini,
+    StockMini
     }
 }
 </script>

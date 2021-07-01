@@ -10,7 +10,12 @@
 <script>
 import User from './components/features/User/User';
 import Admin from './components/features/Admin/Admin';
-import Sales from './components/features/Admin/Sales.vue';
+import Sales from './components/features/Admin/Sales/Sales.vue';
+import Bid from './components/features/Admin/Bid/Bid.vue';
+import Orders from './components/features/Admin/Orders/Orders.vue';
+import Stock from './components/features/Admin/Stock/Stock.vue';
+import Analytics from './components/features/Admin/Analytics/Analytics.vue';
+import Users from './components/features/Admin/Users/Users.vue';
 import { eventBus } from './main';
 import SideMenu from './components/SideMenu.vue';
 import TheHeader from './components/TheHeader.vue';
@@ -22,7 +27,12 @@ export default {
     Admin,
     SideMenu,
     TheHeader,
-    Sales
+    Sales,
+    Bid,
+    Orders,
+    Stock,
+    Analytics,
+    Users
   },
  
   data(){

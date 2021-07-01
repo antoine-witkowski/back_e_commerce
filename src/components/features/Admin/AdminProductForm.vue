@@ -125,7 +125,7 @@ export default {
     font-size: 1.5rem;
   }
   .formContainer{
-    padding: 10px;
+    padding: 50px 30px;
     background-color: #1e90ff;
     border-radius: 10px;
   }
