@@ -1,0 +1,90 @@
+<template>
+<div id="containerCard">
+<!-- Menu dekstop -->
+<div id="the-menu" v-scroll="onScroll">
+    <v-btn height="45" v-for="(item,index) in items" :key="index" block  tile small light color="white">
+       {{item.title}}
+    </v-btn>
+</div>
+<!-- Menu mobile -->
+<div id="menuMobile" class="hidden-md-and-up" v-scroll="onScroll">
+  <v-layout
+    wrap
+  >
+    <v-container>
+      <v-layout justify-center>
+        
+          <v-icon color="deep-purple" @click.stop="drawer = !drawer" large>mdi-menu</v-icon>
+        
+      </v-layout>
+    </v-container>
+
+    <v-navigation-drawer
+      v-model="drawer"
+      fixed
+      temporary
+      color="deep-purple"
+    >
+      <v-btn height="45" v-for="(item,index) in items" :key="index" block dark tile color="deep-purple">
+       {{item.title}}
+      </v-btn>
+    </v-navigation-drawer>
+  </v-layout>
+</div>
+</div>
+</template>
+<script>
+
+export default {
+  name: "TheMenu",
+  data() {
+    return {
+      items: [
+        { title: "Home", icon: "mdi-home-city" },
+        { title: "Nouveautés", icon: "mdi-account" },
+        { title: "Enchères", icon: "mdi-account-group-outline" },
+        { title: "Catégories", icon: "mdi-account-group-outline" },
+        { title: "Règles", icon: "mdi-account-group-outline" },
+        { title: "A propos", icon: "mdi-account-group-outline" },
+        { title: "Contact", icon: "mdi-account-group-outline" },
+      ],
+      mini: true,
+      drawer: null,
+      fab: false,
+    };
+  },
+  methods: {
+    onScroll () {
+     let heightMenu = document.getElementById("containerCard").offsetHeight - (document.getElementById("header").offsetHeight * 2) - 35
+     if(heightMenu >=window.pageYOffset){
+        document.getElementById("the-menu").style.top=window.pageYOffset+"px"
+        document.getElementById("menuMobile").style.top=window.pageYOffset+"px"
+      }
+    },
+    scroll () {
+      this.$vuetify.goTo(0)
+    }
+  },
+};
+</script>
+<style lang="scss">
+  #containerCard{
+    height: 100%;
+    width: 15%;
+  }
+
+  #the-menu{
+    z-index:100;
+    .v-btn:first-child{
+      border-radius: 15px 15px 0 0;
+    }
+    .v-btn:last-child{
+      border-radius: 0 0 15px 15px;
+    }
+  }
+
+   #menuMobile{
+     position: relative;
+   }
+
+</style>

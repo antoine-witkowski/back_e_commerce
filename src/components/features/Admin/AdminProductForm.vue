@@ -1,5 +1,5 @@
 <template>
- <form @submit="trySubmit" class="d-flex flex-column">
+ <form class="d-flex flex-column formContainer">
    <h4>Ajouter une carte</h4>
    <hr class="w-100">
    <div class="form-group">
@@ -41,17 +41,7 @@
    <ul v-if="errors.length">
      <li class="text-danger" v-for="error in errors" :key="error">{{ error }}</li>
    </ul>
-   <!-- <div class="form-group d-flex justify-content-center">
-    <div class="form-check form-check-inline">
-      <input v-model="form.achat" class="form-check-input" type="radio" name="achat-enchere" id="achat" value="true">
-      <label class="form-check-label" for="achat">Buy</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input v-model="form.enchere" class="form-check-input" type="radio" name="achat-enchere" id="bid" value="false">
-      <label class="form-check-label" for="bid">Bid</label>
-    </div>
-  </div> -->
-  <button class="btn btn-primary">Ajouter</button>
+  <v-btn @click="trySubmit" large color="yellow" elevation="4">Ajouter</v-btn>
  </form>
 </template>
 
@@ -79,6 +69,7 @@ export default {
     trySubmit(e){
       e.preventDefault();
       if(this.formIsValid()){
+        console.log(this.form);
         eventBus.addProduct({...this.form});
         this.resetForm();
         eventBus.changePage('User');
@@ -132,5 +123,10 @@ export default {
   }
   h3{
     font-size: 1.5rem;
+  }
+  .formContainer{
+    padding: 10px;
+    background-color: #1e90ff;
+    border-radius: 10px;
   }
 </style>

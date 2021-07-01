@@ -1,7 +1,7 @@
 <template>
 	<div class="d-flex flex-row">
-			<shop class="shop"></shop>
-			<cart class="cart"></cart>
+		<shop class="shop"></shop>
+		<cart class="cart"></cart>
 	</div>
 </template>
 

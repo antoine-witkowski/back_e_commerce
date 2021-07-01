@@ -1,19 +1,102 @@
 <template>
-  <div class="d-flex flex-row justify-content-center p-5">
-    <admin-product-form class="w-25"></admin-product-form>
+  <div class="dashboardWrapper">
+    <div class="dashboardContainer">
+      <v-container>
+        <v-row>
+          <v-col md="8" align-self="center">
+            <v-container>
+              <v-row>
+                <v-col md="6" class="">
+                  <admin-component/>
+                </v-col>
+                <v-col md="6" class="">
+                  <admin-component/>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col md="6" class="">
+                  <admin-component/>
+                </v-col>
+                <v-col md="6" class="">
+                  <admin-component/>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col md="6" class="">
+                  <admin-component/>
+                </v-col>
+                <v-col md="6" class="">
+                  <admin-component/>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-col>
+          <v-col md="4">
+            <admin-product-form></admin-product-form>
+          </v-col>
+        </v-row>
+      </v-container>
+    </div>
   </div>
+
+      <!-- 
+       -->
+    
 </template>
 
 <script>
+import AdminComponent from './AdminComponent.vue';
 import AdminProductForm from './AdminProductForm';
 
 export default {
   components: { 
-      AdminProductForm 
+    AdminProductForm,
+    AdminComponent 
     }
 }
 </script>
 
-<style>
+<style lang="scss">
+.dashboardWrapper{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  min-height: 100vh;
+  background-color: #95afc0;
+}
+.dashboardContainer{
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 80vh;
+  padding: 2vh 20px;
+  margin: 10vh 20px 0 0;
+  background-color: #ffd32a;
+  border-radius: 10px;
+}
+.analytics{
+  height:100%
+}
+.red{
+  background-color: red;
+  border: solid black 2px !important;
 
+}
+.yellow2{
+  background-color: yellow;
+  border: solid black 2px !important;
+  height:100%;
+
+}
+.green{
+  background-color: green;
+  border: solid black 2px !important;
+
+}
+.pink{
+  background-color: pink;
+  border: solid black 2px !important;
+
+}
 </style>

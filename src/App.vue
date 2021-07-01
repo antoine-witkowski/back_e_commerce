@@ -1,25 +1,30 @@
 <template>
-  <div id="app">
-    <the-header></the-header>
-    <div class="d-flex flex-column w-100">
-      <component :is="page"></component>
-    </div>
-  </div>
+    <v-app>
+      <div class="d-flex background-app">
+        <side-menu></side-menu>
+        <component :is="page"></component>
+      </div>
+    </v-app>
 </template>
 
 <script>
-import TheHeader from './components/TheHeader';
 import User from './components/features/User/User';
 import Admin from './components/features/Admin/Admin';
+import Sales from './components/features/Admin/Sales.vue';
 import { eventBus } from './main';
+import SideMenu from './components/SideMenu.vue';
+import TheHeader from './components/TheHeader.vue';
 
 export default {
   name: 'App',
   components: {
-    TheHeader,
     User,
-    Admin
+    Admin,
+    SideMenu,
+    TheHeader,
+    Sales
   },
+ 
   data(){
     return {
       page: eventBus.page
@@ -34,6 +39,8 @@ export default {
 </script>
 
 <style>
-
-
+.background-app{
+  min-height: 100vh;
+  background-color: #95afc0;
+}
 </style>
